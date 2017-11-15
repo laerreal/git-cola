@@ -65,7 +65,7 @@ def decode(enc, encoding=None, errors='strict'):
         return None
 
     if isinstance(enc, ustr):
-        return DecodedStr(enc, "utf-8")
+        return DecodedStr(enc, "utf-8" if encoding is None else encoding)
 
     if encoding is None:
         encoding_tests = _encoding_tests
